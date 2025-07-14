@@ -1,0 +1,509 @@
+[INFO|tokenization_utils_base.py:2159] 2024-10-04 22:01:36,535 >> loading file added_tokens.json
+
+[INFO|tokenization_utils_base.py:2159] 2024-10-04 22:01:36,535 >> loading file special_tokens_map.json
+
+[INFO|tokenization_utils_base.py:2159] 2024-10-04 22:01:36,535 >> loading file tokenizer_config.json
+
+[WARNING|logging.py:313] 2024-10-04 22:01:36,810 >> Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+
+[INFO|template.py:270] 2024-10-04 22:01:36,811 >> Replace eos token: <|eot_id|>
+
+[INFO|loader.py:50] 2024-10-04 22:01:36,811 >> Loading dataset llama3_60%fine.json...
+
+10/04/2024 22:01:36 - WARNING - llamafactory.hparams.parser - `ddp_find_unused_parameters` needs to be set as False for LoRA in DDP training.
+
+10/04/2024 22:01:36 - INFO - llamafactory.hparams.parser - Process rank: 1, device: cuda:1, n_gpu: 1, distributed training: True, compute dtype: torch.bfloat16
+
+10/04/2024 22:01:37 - WARNING - transformers.tokenization_utils_base - Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+
+10/04/2024 22:01:37 - INFO - llamafactory.data.template - Replace eos token: <|eot_id|>
+
+10/04/2024 22:01:38 - INFO - llamafactory.data.loader - Loading dataset llama3_60%fine.json...
+
+[INFO|configuration_utils.py:731] 2024-10-04 22:01:42,084 >> loading configuration file /root/autodl-tmp/Llama3-8B-Chinese-Chat/config.json
+
+[INFO|configuration_utils.py:800] 2024-10-04 22:01:42,085 >> Model config LlamaConfig {
+  "_name_or_path": "/root/autodl-tmp/Llama3-8B-Chinese-Chat",
+  "architectures": [
+    "LlamaForCausalLM"
+  ],
+  "attention_bias": false,
+  "attention_dropout": 0.0,
+  "bos_token_id": 128000,
+  "eos_token_id": 128009,
+  "hidden_act": "silu",
+  "hidden_size": 4096,
+  "initializer_range": 0.02,
+  "intermediate_size": 14336,
+  "max_position_embeddings": 8192,
+  "mlp_bias": false,
+  "model_type": "llama",
+  "num_attention_heads": 32,
+  "num_hidden_layers": 32,
+  "num_key_value_heads": 8,
+  "pretraining_tp": 1,
+  "rms_norm_eps": 1e-05,
+  "rope_scaling": null,
+  "rope_theta": 500000.0,
+  "tie_word_embeddings": false,
+  "torch_dtype": "bfloat16",
+  "transformers_version": "4.42.4",
+  "use_cache": true,
+  "vocab_size": 128256
+}
+
+
+[INFO|modeling_utils.py:3553] 2024-10-04 22:01:42,107 >> loading weights file /root/autodl-tmp/Llama3-8B-Chinese-Chat/model.safetensors.index.json
+
+[INFO|modeling_utils.py:1531] 2024-10-04 22:01:42,107 >> Instantiating LlamaForCausalLM model under default dtype torch.bfloat16.
+
+[INFO|configuration_utils.py:1000] 2024-10-04 22:01:42,108 >> Generate config GenerationConfig {
+  "bos_token_id": 128000,
+  "eos_token_id": 128009
+}
+
+
+[INFO|modeling_utils.py:4364] 2024-10-04 22:01:46,033 >> All model checkpoint weights were used when initializing LlamaForCausalLM.
+
+
+[INFO|modeling_utils.py:4372] 2024-10-04 22:01:46,034 >> All the weights of LlamaForCausalLM were initialized from the model checkpoint at /root/autodl-tmp/Llama3-8B-Chinese-Chat.
+If your task is similar to the task the model of the checkpoint was trained on, you can already use LlamaForCausalLM for predictions without further training.
+
+[INFO|configuration_utils.py:953] 2024-10-04 22:01:46,037 >> loading configuration file /root/autodl-tmp/Llama3-8B-Chinese-Chat/generation_config.json
+
+[INFO|configuration_utils.py:1000] 2024-10-04 22:01:46,037 >> Generate config GenerationConfig {
+  "bos_token_id": 128000,
+  "eos_token_id": 128009,
+  "pad_token_id": 128009
+}
+
+
+[INFO|checkpointing.py:103] 2024-10-04 22:01:46,045 >> Gradient checkpointing enabled.
+
+[INFO|attention.py:80] 2024-10-04 22:01:46,045 >> Using torch SDPA for faster training and inference.
+
+[INFO|adapter.py:302] 2024-10-04 22:01:46,045 >> Upcasting trainable params to float32.
+
+[INFO|adapter.py:158] 2024-10-04 22:01:46,045 >> Fine-tuning method: LoRA
+
+[INFO|misc.py:51] 2024-10-04 22:01:46,046 >> Found linear modules: gate_proj,v_proj,k_proj,down_proj,up_proj,o_proj,q_proj
+
+10/04/2024 22:01:46 - INFO - llamafactory.model.model_utils.checkpointing - Gradient checkpointing enabled.
+
+10/04/2024 22:01:46 - INFO - llamafactory.model.model_utils.attention - Using torch SDPA for faster training and inference.
+
+10/04/2024 22:01:46 - INFO - llamafactory.model.adapter - Upcasting trainable params to float32.
+
+10/04/2024 22:01:46 - INFO - llamafactory.model.adapter - Fine-tuning method: LoRA
+
+10/04/2024 22:01:46 - INFO - llamafactory.model.model_utils.misc - Found linear modules: o_proj,up_proj,gate_proj,q_proj,down_proj,v_proj,k_proj
+
+[INFO|loader.py:196] 2024-10-04 22:01:46,567 >> trainable params: 20,971,520 || all params: 8,051,232,768 || trainable%: 0.2605
+
+[WARNING|other.py:349] 2024-10-04 22:01:46,571 >> Detected kernel version 4.19.90, which is below the recommended minimum of 5.5.0; this can cause the process to hang. It is recommended to upgrade the kernel to the minimum version or higher.
+
+[INFO|trainer.py:642] 2024-10-04 22:01:46,584 >> Using auto half precision backend
+
+10/04/2024 22:01:46 - INFO - llamafactory.model.loader - trainable params: 20,971,520 || all params: 8,051,232,768 || trainable%: 0.2605
+
+[INFO|trainer.py:2128] 2024-10-04 22:01:47,220 >> ***** Running training *****
+
+[INFO|trainer.py:2129] 2024-10-04 22:01:47,221 >>   Num examples = 14,400
+
+[INFO|trainer.py:2130] 2024-10-04 22:01:47,221 >>   Num Epochs = 2
+
+[INFO|trainer.py:2131] 2024-10-04 22:01:47,221 >>   Instantaneous batch size per device = 2
+
+[INFO|trainer.py:2134] 2024-10-04 22:01:47,221 >>   Total train batch size (w. parallel, distributed & accumulation) = 32
+
+[INFO|trainer.py:2135] 2024-10-04 22:01:47,221 >>   Gradient Accumulation steps = 8
+
+[INFO|trainer.py:2136] 2024-10-04 22:01:47,221 >>   Total optimization steps = 900
+
+[INFO|trainer.py:2137] 2024-10-04 22:01:47,226 >>   Number of trainable parameters = 20,971,520
+
+[INFO|callbacks.py:310] 2024-10-04 22:01:57,821 >> {'loss': 1.7962, 'learning_rate': 4.9996e-05, 'epoch': 0.01, 'throughput': 2280.40}
+
+[INFO|callbacks.py:310] 2024-10-04 22:02:07,382 >> {'loss': 0.5092, 'learning_rate': 4.9985e-05, 'epoch': 0.02, 'throughput': 2340.42}
+
+[INFO|callbacks.py:310] 2024-10-04 22:02:17,171 >> {'loss': 0.1832, 'learning_rate': 4.9966e-05, 'epoch': 0.03, 'throughput': 2339.40}
+
+[INFO|callbacks.py:310] 2024-10-04 22:02:26,984 >> {'loss': 0.0758, 'learning_rate': 4.9939e-05, 'epoch': 0.04, 'throughput': 2330.88}
+
+[INFO|callbacks.py:310] 2024-10-04 22:02:36,653 >> {'loss': 0.0490, 'learning_rate': 4.9905e-05, 'epoch': 0.06, 'throughput': 2341.51}
+
+[INFO|callbacks.py:310] 2024-10-04 22:02:46,088 >> {'loss': 0.0280, 'learning_rate': 4.9863e-05, 'epoch': 0.07, 'throughput': 2342.40}
+
+[INFO|callbacks.py:310] 2024-10-04 22:02:55,609 >> {'loss': 0.0353, 'learning_rate': 4.9814e-05, 'epoch': 0.08, 'throughput': 2361.80}
+
+[INFO|callbacks.py:310] 2024-10-04 22:03:04,990 >> {'loss': 0.0384, 'learning_rate': 4.9757e-05, 'epoch': 0.09, 'throughput': 2356.06}
+
+[INFO|callbacks.py:310] 2024-10-04 22:03:14,387 >> {'loss': 0.0335, 'learning_rate': 4.9692e-05, 'epoch': 0.10, 'throughput': 2360.91}
+
+[INFO|callbacks.py:310] 2024-10-04 22:03:23,882 >> {'loss': 0.0356, 'learning_rate': 4.9620e-05, 'epoch': 0.11, 'throughput': 2375.56}
+
+[INFO|callbacks.py:310] 2024-10-04 22:03:33,386 >> {'loss': 0.0346, 'learning_rate': 4.9541e-05, 'epoch': 0.12, 'throughput': 2388.27}
+
+[INFO|callbacks.py:310] 2024-10-04 22:03:42,861 >> {'loss': 0.0320, 'learning_rate': 4.9454e-05, 'epoch': 0.13, 'throughput': 2391.72}
+
+[INFO|callbacks.py:310] 2024-10-04 22:03:52,302 >> {'loss': 0.0330, 'learning_rate': 4.9359e-05, 'epoch': 0.14, 'throughput': 2392.97}
+
+[INFO|callbacks.py:310] 2024-10-04 22:04:01,819 >> {'loss': 0.0277, 'learning_rate': 4.9257e-05, 'epoch': 0.16, 'throughput': 2392.55}
+
+[INFO|callbacks.py:310] 2024-10-04 22:04:11,393 >> {'loss': 0.0153, 'learning_rate': 4.9148e-05, 'epoch': 0.17, 'throughput': 2391.38}
+
+[INFO|callbacks.py:310] 2024-10-04 22:04:21,027 >> {'loss': 0.0240, 'learning_rate': 4.9032e-05, 'epoch': 0.18, 'throughput': 2390.96}
+
+[INFO|callbacks.py:310] 2024-10-04 22:04:30,553 >> {'loss': 0.0254, 'learning_rate': 4.8908e-05, 'epoch': 0.19, 'throughput': 2386.89}
+
+[INFO|callbacks.py:310] 2024-10-04 22:04:40,237 >> {'loss': 0.0226, 'learning_rate': 4.8776e-05, 'epoch': 0.20, 'throughput': 2384.23}
+
+[INFO|callbacks.py:310] 2024-10-04 22:04:49,789 >> {'loss': 0.0326, 'learning_rate': 4.8638e-05, 'epoch': 0.21, 'throughput': 2386.12}
+
+[INFO|callbacks.py:310] 2024-10-04 22:04:59,322 >> {'loss': 0.0275, 'learning_rate': 4.8492e-05, 'epoch': 0.22, 'throughput': 2388.08}
+
+[INFO|callbacks.py:310] 2024-10-04 22:05:08,755 >> {'loss': 0.0311, 'learning_rate': 4.8340e-05, 'epoch': 0.23, 'throughput': 2386.65}
+
+[INFO|callbacks.py:310] 2024-10-04 22:05:18,278 >> {'loss': 0.0400, 'learning_rate': 4.8180e-05, 'epoch': 0.24, 'throughput': 2385.54}
+
+[INFO|callbacks.py:310] 2024-10-04 22:05:27,769 >> {'loss': 0.0313, 'learning_rate': 4.8013e-05, 'epoch': 0.26, 'throughput': 2389.83}
+
+[INFO|callbacks.py:310] 2024-10-04 22:05:37,165 >> {'loss': 0.0225, 'learning_rate': 4.7839e-05, 'epoch': 0.27, 'throughput': 2396.01}
+
+[INFO|callbacks.py:310] 2024-10-04 22:05:46,464 >> {'loss': 0.0349, 'learning_rate': 4.7658e-05, 'epoch': 0.28, 'throughput': 2390.94}
+
+[INFO|callbacks.py:310] 2024-10-04 22:05:55,830 >> {'loss': 0.0224, 'learning_rate': 4.7470e-05, 'epoch': 0.29, 'throughput': 2395.36}
+
+[INFO|callbacks.py:310] 2024-10-04 22:06:05,151 >> {'loss': 0.0261, 'learning_rate': 4.7275e-05, 'epoch': 0.30, 'throughput': 2396.14}
+
+[INFO|callbacks.py:310] 2024-10-04 22:06:14,548 >> {'loss': 0.0258, 'learning_rate': 4.7074e-05, 'epoch': 0.31, 'throughput': 2394.81}
+
+[INFO|callbacks.py:310] 2024-10-04 22:06:23,962 >> {'loss': 0.0175, 'learning_rate': 4.6865e-05, 'epoch': 0.32, 'throughput': 2395.78}
+
+[INFO|callbacks.py:310] 2024-10-04 22:06:33,465 >> {'loss': 0.0197, 'learning_rate': 4.6651e-05, 'epoch': 0.33, 'throughput': 2403.41}
+
+[INFO|callbacks.py:310] 2024-10-04 22:06:42,873 >> {'loss': 0.0213, 'learning_rate': 4.6429e-05, 'epoch': 0.34, 'throughput': 2404.49}
+
+[INFO|callbacks.py:310] 2024-10-04 22:06:52,257 >> {'loss': 0.0254, 'learning_rate': 4.6201e-05, 'epoch': 0.36, 'throughput': 2404.47}
+
+[INFO|callbacks.py:310] 2024-10-04 22:07:01,674 >> {'loss': 0.0202, 'learning_rate': 4.5967e-05, 'epoch': 0.37, 'throughput': 2404.92}
+
+[INFO|callbacks.py:310] 2024-10-04 22:07:11,141 >> {'loss': 0.0134, 'learning_rate': 4.5726e-05, 'epoch': 0.38, 'throughput': 2404.43}
+
+[INFO|callbacks.py:310] 2024-10-04 22:07:20,493 >> {'loss': 0.0223, 'learning_rate': 4.5479e-05, 'epoch': 0.39, 'throughput': 2404.26}
+
+[INFO|callbacks.py:310] 2024-10-04 22:07:29,820 >> {'loss': 0.0139, 'learning_rate': 4.5225e-05, 'epoch': 0.40, 'throughput': 2405.41}
+
+[INFO|callbacks.py:310] 2024-10-04 22:07:39,204 >> {'loss': 0.0250, 'learning_rate': 4.4966e-05, 'epoch': 0.41, 'throughput': 2405.60}
+
+[INFO|callbacks.py:310] 2024-10-04 22:07:48,571 >> {'loss': 0.0197, 'learning_rate': 4.4700e-05, 'epoch': 0.42, 'throughput': 2407.71}
+
+[INFO|callbacks.py:310] 2024-10-04 22:07:57,976 >> {'loss': 0.0214, 'learning_rate': 4.4429e-05, 'epoch': 0.43, 'throughput': 2408.52}
+
+[INFO|callbacks.py:310] 2024-10-04 22:08:07,457 >> {'loss': 0.0166, 'learning_rate': 4.4151e-05, 'epoch': 0.44, 'throughput': 2411.63}
+
+[INFO|callbacks.py:310] 2024-10-04 22:08:16,885 >> {'loss': 0.0123, 'learning_rate': 4.3868e-05, 'epoch': 0.46, 'throughput': 2410.98}
+
+[INFO|callbacks.py:310] 2024-10-04 22:08:26,295 >> {'loss': 0.0149, 'learning_rate': 4.3579e-05, 'epoch': 0.47, 'throughput': 2409.45}
+
+[INFO|callbacks.py:310] 2024-10-04 22:08:35,821 >> {'loss': 0.0133, 'learning_rate': 4.3284e-05, 'epoch': 0.48, 'throughput': 2410.33}
+
+[INFO|callbacks.py:310] 2024-10-04 22:08:45,270 >> {'loss': 0.0168, 'learning_rate': 4.2983e-05, 'epoch': 0.49, 'throughput': 2413.30}
+
+[INFO|callbacks.py:310] 2024-10-04 22:08:54,717 >> {'loss': 0.0168, 'learning_rate': 4.2678e-05, 'epoch': 0.50, 'throughput': 2413.49}
+
+[INFO|callbacks.py:310] 2024-10-04 22:09:04,197 >> {'loss': 0.0085, 'learning_rate': 4.2366e-05, 'epoch': 0.51, 'throughput': 2414.85}
+
+[INFO|callbacks.py:310] 2024-10-04 22:09:13,643 >> {'loss': 0.0201, 'learning_rate': 4.2050e-05, 'epoch': 0.52, 'throughput': 2416.52}
+
+[INFO|callbacks.py:310] 2024-10-04 22:09:23,030 >> {'loss': 0.0167, 'learning_rate': 4.1728e-05, 'epoch': 0.53, 'throughput': 2416.84}
+
+[INFO|callbacks.py:310] 2024-10-04 22:09:32,422 >> {'loss': 0.0165, 'learning_rate': 4.1401e-05, 'epoch': 0.54, 'throughput': 2415.78}
+
+[INFO|callbacks.py:310] 2024-10-04 22:09:41,764 >> {'loss': 0.0108, 'learning_rate': 4.1070e-05, 'epoch': 0.56, 'throughput': 2415.50}
+
+[INFO|callbacks.py:310] 2024-10-04 22:09:51,135 >> {'loss': 0.0152, 'learning_rate': 4.0733e-05, 'epoch': 0.57, 'throughput': 2414.71}
+
+[INFO|callbacks.py:310] 2024-10-04 22:10:00,527 >> {'loss': 0.0104, 'learning_rate': 4.0392e-05, 'epoch': 0.58, 'throughput': 2415.31}
+
+[INFO|callbacks.py:310] 2024-10-04 22:10:09,927 >> {'loss': 0.0148, 'learning_rate': 4.0045e-05, 'epoch': 0.59, 'throughput': 2415.44}
+
+[INFO|callbacks.py:310] 2024-10-04 22:10:19,382 >> {'loss': 0.0168, 'learning_rate': 3.9695e-05, 'epoch': 0.60, 'throughput': 2415.31}
+
+[INFO|callbacks.py:310] 2024-10-04 22:10:28,898 >> {'loss': 0.0197, 'learning_rate': 3.9339e-05, 'epoch': 0.61, 'throughput': 2416.95}
+
+[INFO|callbacks.py:310] 2024-10-04 22:10:38,545 >> {'loss': 0.0166, 'learning_rate': 3.8980e-05, 'epoch': 0.62, 'throughput': 2415.46}
+
+[INFO|callbacks.py:310] 2024-10-04 22:10:48,083 >> {'loss': 0.0167, 'learning_rate': 3.8616e-05, 'epoch': 0.63, 'throughput': 2415.29}
+
+[INFO|callbacks.py:310] 2024-10-04 22:10:57,643 >> {'loss': 0.0155, 'learning_rate': 3.8248e-05, 'epoch': 0.64, 'throughput': 2415.89}
+
+[INFO|callbacks.py:310] 2024-10-04 22:11:07,141 >> {'loss': 0.0182, 'learning_rate': 3.7876e-05, 'epoch': 0.66, 'throughput': 2416.69}
+
+[INFO|callbacks.py:310] 2024-10-04 22:11:16,678 >> {'loss': 0.0141, 'learning_rate': 3.7500e-05, 'epoch': 0.67, 'throughput': 2414.82}
+
+[INFO|callbacks.py:310] 2024-10-04 22:11:26,112 >> {'loss': 0.0102, 'learning_rate': 3.7120e-05, 'epoch': 0.68, 'throughput': 2415.05}
+
+[INFO|callbacks.py:310] 2024-10-04 22:11:35,564 >> {'loss': 0.0120, 'learning_rate': 3.6737e-05, 'epoch': 0.69, 'throughput': 2415.43}
+
+[INFO|callbacks.py:310] 2024-10-04 22:11:44,991 >> {'loss': 0.0054, 'learning_rate': 3.6350e-05, 'epoch': 0.70, 'throughput': 2415.19}
+
+[INFO|callbacks.py:310] 2024-10-04 22:11:54,534 >> {'loss': 0.0125, 'learning_rate': 3.5959e-05, 'epoch': 0.71, 'throughput': 2414.47}
+
+[INFO|callbacks.py:310] 2024-10-04 22:12:04,143 >> {'loss': 0.0140, 'learning_rate': 3.5565e-05, 'epoch': 0.72, 'throughput': 2413.76}
+
+[INFO|callbacks.py:310] 2024-10-04 22:12:13,859 >> {'loss': 0.0134, 'learning_rate': 3.5168e-05, 'epoch': 0.73, 'throughput': 2414.18}
+
+[INFO|callbacks.py:310] 2024-10-04 22:12:23,566 >> {'loss': 0.0129, 'learning_rate': 3.4768e-05, 'epoch': 0.74, 'throughput': 2412.50}
+
+[INFO|callbacks.py:310] 2024-10-04 22:12:33,175 >> {'loss': 0.0081, 'learning_rate': 3.4365e-05, 'epoch': 0.76, 'throughput': 2412.65}
+
+[INFO|callbacks.py:310] 2024-10-04 22:12:42,750 >> {'loss': 0.0142, 'learning_rate': 3.3959e-05, 'epoch': 0.77, 'throughput': 2412.29}
+
+[INFO|callbacks.py:310] 2024-10-04 22:12:52,261 >> {'loss': 0.0150, 'learning_rate': 3.3551e-05, 'epoch': 0.78, 'throughput': 2412.77}
+
+[INFO|callbacks.py:310] 2024-10-04 22:13:01,782 >> {'loss': 0.0105, 'learning_rate': 3.3139e-05, 'epoch': 0.79, 'throughput': 2412.59}
+
+[INFO|callbacks.py:310] 2024-10-04 22:13:11,359 >> {'loss': 0.0088, 'learning_rate': 3.2725e-05, 'epoch': 0.80, 'throughput': 2413.01}
+
+[INFO|callbacks.py:310] 2024-10-04 22:13:21,131 >> {'loss': 0.0152, 'learning_rate': 3.2309e-05, 'epoch': 0.81, 'throughput': 2415.02}
+
+[INFO|callbacks.py:310] 2024-10-04 22:13:30,679 >> {'loss': 0.0221, 'learning_rate': 3.1891e-05, 'epoch': 0.82, 'throughput': 2414.50}
+
+[INFO|callbacks.py:310] 2024-10-04 22:13:40,278 >> {'loss': 0.0126, 'learning_rate': 3.1470e-05, 'epoch': 0.83, 'throughput': 2415.09}
+
+[INFO|callbacks.py:310] 2024-10-04 22:13:49,819 >> {'loss': 0.0076, 'learning_rate': 3.1048e-05, 'epoch': 0.84, 'throughput': 2415.51}
+
+[INFO|callbacks.py:310] 2024-10-04 22:13:59,393 >> {'loss': 0.0130, 'learning_rate': 3.0624e-05, 'epoch': 0.86, 'throughput': 2414.19}
+
+[INFO|callbacks.py:310] 2024-10-04 22:14:08,918 >> {'loss': 0.0126, 'learning_rate': 3.0198e-05, 'epoch': 0.87, 'throughput': 2414.35}
+
+[INFO|callbacks.py:310] 2024-10-04 22:14:18,452 >> {'loss': 0.0087, 'learning_rate': 2.9770e-05, 'epoch': 0.88, 'throughput': 2413.02}
+
+[INFO|callbacks.py:310] 2024-10-04 22:14:27,943 >> {'loss': 0.0165, 'learning_rate': 2.9341e-05, 'epoch': 0.89, 'throughput': 2411.96}
+
+[INFO|callbacks.py:310] 2024-10-04 22:14:37,583 >> {'loss': 0.0114, 'learning_rate': 2.8911e-05, 'epoch': 0.90, 'throughput': 2409.69}
+
+[INFO|callbacks.py:310] 2024-10-04 22:14:47,202 >> {'loss': 0.0132, 'learning_rate': 2.8479e-05, 'epoch': 0.91, 'throughput': 2409.96}
+
+[INFO|callbacks.py:310] 2024-10-04 22:14:56,791 >> {'loss': 0.0111, 'learning_rate': 2.8047e-05, 'epoch': 0.92, 'throughput': 2409.75}
+
+[INFO|callbacks.py:310] 2024-10-04 22:15:06,360 >> {'loss': 0.0105, 'learning_rate': 2.7613e-05, 'epoch': 0.93, 'throughput': 2409.49}
+
+[INFO|callbacks.py:310] 2024-10-04 22:15:15,959 >> {'loss': 0.0139, 'learning_rate': 2.7179e-05, 'epoch': 0.94, 'throughput': 2408.51}
+
+[INFO|callbacks.py:310] 2024-10-04 22:15:25,437 >> {'loss': 0.0148, 'learning_rate': 2.6744e-05, 'epoch': 0.96, 'throughput': 2408.16}
+
+[INFO|callbacks.py:310] 2024-10-04 22:15:34,971 >> {'loss': 0.0091, 'learning_rate': 2.6308e-05, 'epoch': 0.97, 'throughput': 2408.06}
+
+[INFO|callbacks.py:310] 2024-10-04 22:15:44,415 >> {'loss': 0.0167, 'learning_rate': 2.5872e-05, 'epoch': 0.98, 'throughput': 2407.83}
+
+[INFO|callbacks.py:310] 2024-10-04 22:15:53,977 >> {'loss': 0.0149, 'learning_rate': 2.5436e-05, 'epoch': 0.99, 'throughput': 2407.53}
+
+[INFO|callbacks.py:310] 2024-10-04 22:16:03,512 >> {'loss': 0.0079, 'learning_rate': 2.5000e-05, 'epoch': 1.00, 'throughput': 2406.82}
+
+[INFO|callbacks.py:310] 2024-10-04 22:16:13,052 >> {'loss': 0.0062, 'learning_rate': 2.4564e-05, 'epoch': 1.01, 'throughput': 2405.88}
+
+[INFO|callbacks.py:310] 2024-10-04 22:16:22,549 >> {'loss': 0.0098, 'learning_rate': 2.4128e-05, 'epoch': 1.02, 'throughput': 2405.95}
+
+[INFO|callbacks.py:310] 2024-10-04 22:16:31,986 >> {'loss': 0.0040, 'learning_rate': 2.3692e-05, 'epoch': 1.03, 'throughput': 2405.62}
+
+[INFO|callbacks.py:310] 2024-10-04 22:16:41,522 >> {'loss': 0.0068, 'learning_rate': 2.3256e-05, 'epoch': 1.04, 'throughput': 2405.72}
+
+[INFO|callbacks.py:310] 2024-10-04 22:16:51,108 >> {'loss': 0.0048, 'learning_rate': 2.2821e-05, 'epoch': 1.06, 'throughput': 2405.43}
+
+[INFO|callbacks.py:310] 2024-10-04 22:17:00,641 >> {'loss': 0.0059, 'learning_rate': 2.2387e-05, 'epoch': 1.07, 'throughput': 2405.04}
+
+[INFO|callbacks.py:310] 2024-10-04 22:17:10,090 >> {'loss': 0.0112, 'learning_rate': 2.1953e-05, 'epoch': 1.08, 'throughput': 2404.65}
+
+[INFO|callbacks.py:310] 2024-10-04 22:17:19,586 >> {'loss': 0.0068, 'learning_rate': 2.1521e-05, 'epoch': 1.09, 'throughput': 2404.68}
+
+[INFO|callbacks.py:310] 2024-10-04 22:17:29,124 >> {'loss': 0.0058, 'learning_rate': 2.1089e-05, 'epoch': 1.10, 'throughput': 2404.88}
+
+[INFO|callbacks.py:310] 2024-10-04 22:17:38,779 >> {'loss': 0.0099, 'learning_rate': 2.0659e-05, 'epoch': 1.11, 'throughput': 2404.59}
+
+[INFO|callbacks.py:310] 2024-10-04 22:17:48,310 >> {'loss': 0.0090, 'learning_rate': 2.0230e-05, 'epoch': 1.12, 'throughput': 2405.17}
+
+[INFO|callbacks.py:310] 2024-10-04 22:17:57,819 >> {'loss': 0.0034, 'learning_rate': 1.9802e-05, 'epoch': 1.13, 'throughput': 2404.12}
+
+[INFO|callbacks.py:310] 2024-10-04 22:18:07,350 >> {'loss': 0.0032, 'learning_rate': 1.9376e-05, 'epoch': 1.14, 'throughput': 2404.40}
+
+[INFO|callbacks.py:310] 2024-10-04 22:18:16,782 >> {'loss': 0.0059, 'learning_rate': 1.8952e-05, 'epoch': 1.16, 'throughput': 2405.63}
+
+[INFO|callbacks.py:310] 2024-10-04 22:18:26,178 >> {'loss': 0.0101, 'learning_rate': 1.8530e-05, 'epoch': 1.17, 'throughput': 2406.25}
+
+[INFO|callbacks.py:310] 2024-10-04 22:18:35,638 >> {'loss': 0.0086, 'learning_rate': 1.8109e-05, 'epoch': 1.18, 'throughput': 2407.16}
+
+[INFO|callbacks.py:310] 2024-10-04 22:18:45,032 >> {'loss': 0.0061, 'learning_rate': 1.7691e-05, 'epoch': 1.19, 'throughput': 2407.81}
+
+[INFO|callbacks.py:310] 2024-10-04 22:18:54,558 >> {'loss': 0.0052, 'learning_rate': 1.7275e-05, 'epoch': 1.20, 'throughput': 2408.66}
+
+[INFO|callbacks.py:310] 2024-10-04 22:19:04,369 >> {'loss': 0.0101, 'learning_rate': 1.6861e-05, 'epoch': 1.21, 'throughput': 2408.59}
+
+[INFO|callbacks.py:310] 2024-10-04 22:19:13,881 >> {'loss': 0.0084, 'learning_rate': 1.6449e-05, 'epoch': 1.22, 'throughput': 2410.29}
+
+[INFO|callbacks.py:310] 2024-10-04 22:19:23,417 >> {'loss': 0.0089, 'learning_rate': 1.6041e-05, 'epoch': 1.23, 'throughput': 2410.78}
+
+[INFO|callbacks.py:310] 2024-10-04 22:19:32,907 >> {'loss': 0.0070, 'learning_rate': 1.5635e-05, 'epoch': 1.24, 'throughput': 2410.06}
+
+[INFO|callbacks.py:310] 2024-10-04 22:19:42,360 >> {'loss': 0.0080, 'learning_rate': 1.5232e-05, 'epoch': 1.26, 'throughput': 2409.98}
+
+[INFO|callbacks.py:310] 2024-10-04 22:19:51,935 >> {'loss': 0.0087, 'learning_rate': 1.4832e-05, 'epoch': 1.27, 'throughput': 2409.72}
+
+[INFO|callbacks.py:310] 2024-10-04 22:20:01,411 >> {'loss': 0.0079, 'learning_rate': 1.4435e-05, 'epoch': 1.28, 'throughput': 2409.61}
+
+[INFO|callbacks.py:310] 2024-10-04 22:20:10,776 >> {'loss': 0.0037, 'learning_rate': 1.4041e-05, 'epoch': 1.29, 'throughput': 2410.00}
+
+[INFO|callbacks.py:310] 2024-10-04 22:20:20,173 >> {'loss': 0.0065, 'learning_rate': 1.3650e-05, 'epoch': 1.30, 'throughput': 2409.91}
+
+[INFO|callbacks.py:310] 2024-10-04 22:20:29,631 >> {'loss': 0.0063, 'learning_rate': 1.3263e-05, 'epoch': 1.31, 'throughput': 2409.95}
+
+[INFO|callbacks.py:310] 2024-10-04 22:20:39,077 >> {'loss': 0.0072, 'learning_rate': 1.2880e-05, 'epoch': 1.32, 'throughput': 2409.94}
+
+[INFO|callbacks.py:310] 2024-10-04 22:20:48,567 >> {'loss': 0.0137, 'learning_rate': 1.2500e-05, 'epoch': 1.33, 'throughput': 2409.80}
+
+[INFO|callbacks.py:310] 2024-10-04 22:20:58,015 >> {'loss': 0.0069, 'learning_rate': 1.2124e-05, 'epoch': 1.34, 'throughput': 2409.28}
+
+[INFO|callbacks.py:310] 2024-10-04 22:21:07,450 >> {'loss': 0.0100, 'learning_rate': 1.1752e-05, 'epoch': 1.36, 'throughput': 2409.27}
+
+[INFO|callbacks.py:310] 2024-10-04 22:21:17,050 >> {'loss': 0.0066, 'learning_rate': 1.1384e-05, 'epoch': 1.37, 'throughput': 2409.66}
+
+[INFO|callbacks.py:310] 2024-10-04 22:21:26,604 >> {'loss': 0.0042, 'learning_rate': 1.1020e-05, 'epoch': 1.38, 'throughput': 2409.54}
+
+[INFO|callbacks.py:310] 2024-10-04 22:21:36,210 >> {'loss': 0.0032, 'learning_rate': 1.0661e-05, 'epoch': 1.39, 'throughput': 2410.03}
+
+[INFO|callbacks.py:310] 2024-10-04 22:21:45,779 >> {'loss': 0.0036, 'learning_rate': 1.0305e-05, 'epoch': 1.40, 'throughput': 2410.17}
+
+[INFO|callbacks.py:310] 2024-10-04 22:21:55,474 >> {'loss': 0.0061, 'learning_rate': 9.9546e-06, 'epoch': 1.41, 'throughput': 2409.28}
+
+[INFO|callbacks.py:310] 2024-10-04 22:22:05,136 >> {'loss': 0.0118, 'learning_rate': 9.6085e-06, 'epoch': 1.42, 'throughput': 2409.76}
+
+[INFO|callbacks.py:310] 2024-10-04 22:22:14,733 >> {'loss': 0.0069, 'learning_rate': 9.2670e-06, 'epoch': 1.43, 'throughput': 2409.06}
+
+[INFO|callbacks.py:310] 2024-10-04 22:22:24,357 >> {'loss': 0.0047, 'learning_rate': 8.9303e-06, 'epoch': 1.44, 'throughput': 2409.37}
+
+[INFO|callbacks.py:310] 2024-10-04 22:22:33,855 >> {'loss': 0.0022, 'learning_rate': 8.5985e-06, 'epoch': 1.46, 'throughput': 2409.90}
+
+[INFO|callbacks.py:310] 2024-10-04 22:22:43,410 >> {'loss': 0.0133, 'learning_rate': 8.2717e-06, 'epoch': 1.47, 'throughput': 2409.88}
+
+[INFO|callbacks.py:310] 2024-10-04 22:22:52,937 >> {'loss': 0.0013, 'learning_rate': 7.9500e-06, 'epoch': 1.48, 'throughput': 2409.85}
+
+[INFO|callbacks.py:310] 2024-10-04 22:23:02,503 >> {'loss': 0.0017, 'learning_rate': 7.6335e-06, 'epoch': 1.49, 'throughput': 2409.73}
+
+[INFO|callbacks.py:310] 2024-10-04 22:23:12,085 >> {'loss': 0.0081, 'learning_rate': 7.3223e-06, 'epoch': 1.50, 'throughput': 2408.77}
+
+[INFO|callbacks.py:310] 2024-10-04 22:23:21,729 >> {'loss': 0.0046, 'learning_rate': 7.0165e-06, 'epoch': 1.51, 'throughput': 2408.42}
+
+[INFO|callbacks.py:310] 2024-10-04 22:23:31,325 >> {'loss': 0.0068, 'learning_rate': 6.7162e-06, 'epoch': 1.52, 'throughput': 2408.17}
+
+[INFO|callbacks.py:310] 2024-10-04 22:23:41,023 >> {'loss': 0.0041, 'learning_rate': 6.4214e-06, 'epoch': 1.53, 'throughput': 2408.54}
+
+[INFO|callbacks.py:310] 2024-10-04 22:23:50,583 >> {'loss': 0.0081, 'learning_rate': 6.1323e-06, 'epoch': 1.54, 'throughput': 2407.75}
+
+[INFO|callbacks.py:310] 2024-10-04 22:24:00,296 >> {'loss': 0.0079, 'learning_rate': 5.8489e-06, 'epoch': 1.56, 'throughput': 2407.42}
+
+[INFO|callbacks.py:310] 2024-10-04 22:24:10,138 >> {'loss': 0.0088, 'learning_rate': 5.5714e-06, 'epoch': 1.57, 'throughput': 2406.73}
+
+[INFO|callbacks.py:310] 2024-10-04 22:24:19,907 >> {'loss': 0.0042, 'learning_rate': 5.2997e-06, 'epoch': 1.58, 'throughput': 2406.65}
+
+[INFO|callbacks.py:310] 2024-10-04 22:24:29,637 >> {'loss': 0.0045, 'learning_rate': 5.0341e-06, 'epoch': 1.59, 'throughput': 2406.03}
+
+[INFO|callbacks.py:310] 2024-10-04 22:24:39,286 >> {'loss': 0.0042, 'learning_rate': 4.7746e-06, 'epoch': 1.60, 'throughput': 2405.54}
+
+[INFO|callbacks.py:310] 2024-10-04 22:24:49,007 >> {'loss': 0.0056, 'learning_rate': 4.5212e-06, 'epoch': 1.61, 'throughput': 2404.80}
+
+[INFO|callbacks.py:310] 2024-10-04 22:24:58,661 >> {'loss': 0.0083, 'learning_rate': 4.2741e-06, 'epoch': 1.62, 'throughput': 2404.88}
+
+[INFO|callbacks.py:310] 2024-10-04 22:25:08,438 >> {'loss': 0.0030, 'learning_rate': 4.0332e-06, 'epoch': 1.63, 'throughput': 2404.63}
+
+[INFO|callbacks.py:310] 2024-10-04 22:25:18,257 >> {'loss': 0.0028, 'learning_rate': 3.7988e-06, 'epoch': 1.64, 'throughput': 2403.81}
+
+[INFO|callbacks.py:310] 2024-10-04 22:25:28,096 >> {'loss': 0.0052, 'learning_rate': 3.5708e-06, 'epoch': 1.66, 'throughput': 2403.46}
+
+[INFO|callbacks.py:310] 2024-10-04 22:25:37,887 >> {'loss': 0.0082, 'learning_rate': 3.3494e-06, 'epoch': 1.67, 'throughput': 2402.83}
+
+[INFO|callbacks.py:310] 2024-10-04 22:25:47,747 >> {'loss': 0.0042, 'learning_rate': 3.1345e-06, 'epoch': 1.68, 'throughput': 2401.93}
+
+[INFO|callbacks.py:310] 2024-10-04 22:25:57,619 >> {'loss': 0.0094, 'learning_rate': 2.9263e-06, 'epoch': 1.69, 'throughput': 2401.76}
+
+[INFO|callbacks.py:310] 2024-10-04 22:26:07,519 >> {'loss': 0.0069, 'learning_rate': 2.7248e-06, 'epoch': 1.70, 'throughput': 2401.47}
+
+[INFO|callbacks.py:310] 2024-10-04 22:26:17,338 >> {'loss': 0.0027, 'learning_rate': 2.5301e-06, 'epoch': 1.71, 'throughput': 2401.50}
+
+[INFO|callbacks.py:310] 2024-10-04 22:26:26,991 >> {'loss': 0.0035, 'learning_rate': 2.3423e-06, 'epoch': 1.72, 'throughput': 2401.12}
+
+[INFO|callbacks.py:310] 2024-10-04 22:26:36,675 >> {'loss': 0.0028, 'learning_rate': 2.1614e-06, 'epoch': 1.73, 'throughput': 2401.09}
+
+[INFO|callbacks.py:310] 2024-10-04 22:26:46,348 >> {'loss': 0.0069, 'learning_rate': 1.9874e-06, 'epoch': 1.74, 'throughput': 2401.04}
+
+[INFO|callbacks.py:310] 2024-10-04 22:26:56,050 >> {'loss': 0.0086, 'learning_rate': 1.8204e-06, 'epoch': 1.76, 'throughput': 2400.31}
+
+[INFO|callbacks.py:310] 2024-10-04 22:27:05,622 >> {'loss': 0.0089, 'learning_rate': 1.6605e-06, 'epoch': 1.77, 'throughput': 2400.03}
+
+[INFO|callbacks.py:310] 2024-10-04 22:27:15,270 >> {'loss': 0.0062, 'learning_rate': 1.5077e-06, 'epoch': 1.78, 'throughput': 2399.94}
+
+[INFO|callbacks.py:310] 2024-10-04 22:27:24,913 >> {'loss': 0.0045, 'learning_rate': 1.3620e-06, 'epoch': 1.79, 'throughput': 2399.24}
+
+[INFO|callbacks.py:310] 2024-10-04 22:27:34,630 >> {'loss': 0.0016, 'learning_rate': 1.2236e-06, 'epoch': 1.80, 'throughput': 2399.24}
+
+[INFO|callbacks.py:310] 2024-10-04 22:27:44,303 >> {'loss': 0.0095, 'learning_rate': 1.0924e-06, 'epoch': 1.81, 'throughput': 2398.94}
+
+[INFO|callbacks.py:310] 2024-10-04 22:27:54,027 >> {'loss': 0.0089, 'learning_rate': 9.6846e-07, 'epoch': 1.82, 'throughput': 2398.93}
+
+[INFO|callbacks.py:310] 2024-10-04 22:28:03,694 >> {'loss': 0.0032, 'learning_rate': 8.5185e-07, 'epoch': 1.83, 'throughput': 2399.19}
+
+[INFO|callbacks.py:310] 2024-10-04 22:28:13,421 >> {'loss': 0.0056, 'learning_rate': 7.4261e-07, 'epoch': 1.84, 'throughput': 2399.02}
+
+[INFO|callbacks.py:310] 2024-10-04 22:28:23,111 >> {'loss': 0.0076, 'learning_rate': 6.4075e-07, 'epoch': 1.86, 'throughput': 2398.28}
+
+[INFO|callbacks.py:310] 2024-10-04 22:28:32,767 >> {'loss': 0.0103, 'learning_rate': 5.4631e-07, 'epoch': 1.87, 'throughput': 2397.84}
+
+[INFO|callbacks.py:310] 2024-10-04 22:28:42,432 >> {'loss': 0.0070, 'learning_rate': 4.5932e-07, 'epoch': 1.88, 'throughput': 2397.52}
+
+[INFO|callbacks.py:310] 2024-10-04 22:28:52,104 >> {'loss': 0.0046, 'learning_rate': 3.7981e-07, 'epoch': 1.89, 'throughput': 2397.66}
+
+[INFO|callbacks.py:310] 2024-10-04 22:29:01,730 >> {'loss': 0.0044, 'learning_rate': 3.0779e-07, 'epoch': 1.90, 'throughput': 2397.16}
+
+[INFO|callbacks.py:310] 2024-10-04 22:29:11,095 >> {'loss': 0.0057, 'learning_rate': 2.4330e-07, 'epoch': 1.91, 'throughput': 2396.86}
+
+[INFO|callbacks.py:310] 2024-10-04 22:29:20,567 >> {'loss': 0.0061, 'learning_rate': 1.8635e-07, 'epoch': 1.92, 'throughput': 2397.18}
+
+[INFO|callbacks.py:310] 2024-10-04 22:29:29,988 >> {'loss': 0.0104, 'learning_rate': 1.3695e-07, 'epoch': 1.93, 'throughput': 2396.76}
+
+[INFO|callbacks.py:310] 2024-10-04 22:29:39,589 >> {'loss': 0.0082, 'learning_rate': 9.5133e-08, 'epoch': 1.94, 'throughput': 2396.71}
+
+[INFO|callbacks.py:310] 2024-10-04 22:29:49,083 >> {'loss': 0.0081, 'learning_rate': 6.0899e-08, 'epoch': 1.96, 'throughput': 2396.26}
+
+[INFO|callbacks.py:310] 2024-10-04 22:29:59,545 >> {'loss': 0.0053, 'learning_rate': 3.4262e-08, 'epoch': 1.97, 'throughput': 2395.21}
+
+[INFO|callbacks.py:310] 2024-10-04 22:30:09,004 >> {'loss': 0.0023, 'learning_rate': 1.5229e-08, 'epoch': 1.98, 'throughput': 2394.90}
+
+[INFO|callbacks.py:310] 2024-10-04 22:30:18,484 >> {'loss': 0.0056, 'learning_rate': 3.8076e-09, 'epoch': 1.99, 'throughput': 2394.90}
+
+[INFO|callbacks.py:310] 2024-10-04 22:30:27,945 >> {'loss': 0.0059, 'learning_rate': 0.0000e+00, 'epoch': 2.00, 'throughput': 2395.56}
+
+[INFO|trainer.py:3478] 2024-10-04 22:30:27,946 >> Saving model checkpoint to saves/LLaMA3-8B-Chinese-Chat/lora/train_2024-10-04-21-06-36/checkpoint-900
+
+[INFO|tokenization_utils_base.py:2574] 2024-10-04 22:30:28,084 >> tokenizer config file saved in saves/LLaMA3-8B-Chinese-Chat/lora/train_2024-10-04-21-06-36/checkpoint-900/tokenizer_config.json
+
+[INFO|tokenization_utils_base.py:2583] 2024-10-04 22:30:28,084 >> Special tokens file saved in saves/LLaMA3-8B-Chinese-Chat/lora/train_2024-10-04-21-06-36/checkpoint-900/special_tokens_map.json
+
+[INFO|trainer.py:2383] 2024-10-04 22:30:28,421 >> 
+
+Training completed. Do not forget to share your model on huggingface.co/models =)
+
+
+
+[INFO|trainer.py:3478] 2024-10-04 22:30:28,424 >> Saving model checkpoint to saves/LLaMA3-8B-Chinese-Chat/lora/train_2024-10-04-21-06-36
+
+[INFO|tokenization_utils_base.py:2574] 2024-10-04 22:30:28,554 >> tokenizer config file saved in saves/LLaMA3-8B-Chinese-Chat/lora/train_2024-10-04-21-06-36/tokenizer_config.json
+
+[INFO|tokenization_utils_base.py:2583] 2024-10-04 22:30:28,554 >> Special tokens file saved in saves/LLaMA3-8B-Chinese-Chat/lora/train_2024-10-04-21-06-36/special_tokens_map.json
+
+[WARNING|ploting.py:89] 2024-10-04 22:30:28,849 >> No metric eval_loss to plot.
+
+[WARNING|ploting.py:89] 2024-10-04 22:30:28,849 >> No metric eval_accuracy to plot.
+
+[INFO|modelcard.py:449] 2024-10-04 22:30:28,851 >> Dropping the following result as it does not have all the necessary fields:
+{'task': {'name': 'Causal Language Modeling', 'type': 'text-generation'}}
+

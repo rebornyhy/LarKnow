@@ -1,0 +1,275 @@
+[WARNING|parser.py:273] 2024-10-04 21:09:54,302 >> `ddp_find_unused_parameters` needs to be set as False for LoRA in DDP training.
+
+[INFO|parser.py:325] 2024-10-04 21:09:54,302 >> Process rank: 0, device: cuda:0, n_gpu: 1, distributed training: True, compute dtype: torch.bfloat16
+
+[INFO|tokenization_utils_base.py:2159] 2024-10-04 21:09:54,306 >> loading file tokenizer.json
+
+[INFO|tokenization_utils_base.py:2159] 2024-10-04 21:09:54,306 >> loading file added_tokens.json
+
+10/04/2024 21:09:54 - WARNING - llamafactory.hparams.parser - `ddp_find_unused_parameters` needs to be set as False for LoRA in DDP training.
+
+10/04/2024 21:09:54 - INFO - llamafactory.hparams.parser - Process rank: 1, device: cuda:1, n_gpu: 1, distributed training: True, compute dtype: torch.bfloat16
+
+[INFO|tokenization_utils_base.py:2159] 2024-10-04 21:09:54,306 >> loading file special_tokens_map.json
+
+[INFO|tokenization_utils_base.py:2159] 2024-10-04 21:09:54,306 >> loading file tokenizer_config.json
+
+[WARNING|logging.py:313] 2024-10-04 21:09:54,588 >> Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+
+[INFO|template.py:270] 2024-10-04 21:09:54,589 >> Replace eos token: <|eot_id|>
+
+[INFO|loader.py:50] 2024-10-04 21:09:54,589 >> Loading dataset llama3_20%fine.json...
+
+10/04/2024 21:09:54 - WARNING - transformers.tokenization_utils_base - Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+
+10/04/2024 21:09:54 - INFO - llamafactory.data.template - Replace eos token: <|eot_id|>
+
+10/04/2024 21:09:56 - INFO - llamafactory.data.loader - Loading dataset llama3_20%fine.json...
+
+[INFO|configuration_utils.py:731] 2024-10-04 21:10:00,306 >> loading configuration file /root/autodl-tmp/Llama3-8B-Chinese-Chat/config.json
+
+[INFO|configuration_utils.py:800] 2024-10-04 21:10:00,307 >> Model config LlamaConfig {
+  "_name_or_path": "/root/autodl-tmp/Llama3-8B-Chinese-Chat",
+  "architectures": [
+    "LlamaForCausalLM"
+  ],
+  "attention_bias": false,
+  "attention_dropout": 0.0,
+  "bos_token_id": 128000,
+  "eos_token_id": 128009,
+  "hidden_act": "silu",
+  "hidden_size": 4096,
+  "initializer_range": 0.02,
+  "intermediate_size": 14336,
+  "max_position_embeddings": 8192,
+  "mlp_bias": false,
+  "model_type": "llama",
+  "num_attention_heads": 32,
+  "num_hidden_layers": 32,
+  "num_key_value_heads": 8,
+  "pretraining_tp": 1,
+  "rms_norm_eps": 1e-05,
+  "rope_scaling": null,
+  "rope_theta": 500000.0,
+  "tie_word_embeddings": false,
+  "torch_dtype": "bfloat16",
+  "transformers_version": "4.42.4",
+  "use_cache": true,
+  "vocab_size": 128256
+}
+
+
+[INFO|modeling_utils.py:3553] 2024-10-04 21:10:00,338 >> loading weights file /root/autodl-tmp/Llama3-8B-Chinese-Chat/model.safetensors.index.json
+
+[INFO|modeling_utils.py:1531] 2024-10-04 21:10:00,339 >> Instantiating LlamaForCausalLM model under default dtype torch.bfloat16.
+
+[INFO|configuration_utils.py:1000] 2024-10-04 21:10:00,340 >> Generate config GenerationConfig {
+  "bos_token_id": 128000,
+  "eos_token_id": 128009
+}
+
+
+[INFO|modeling_utils.py:4364] 2024-10-04 21:10:05,846 >> All model checkpoint weights were used when initializing LlamaForCausalLM.
+
+
+[INFO|modeling_utils.py:4372] 2024-10-04 21:10:05,846 >> All the weights of LlamaForCausalLM were initialized from the model checkpoint at /root/autodl-tmp/Llama3-8B-Chinese-Chat.
+If your task is similar to the task the model of the checkpoint was trained on, you can already use LlamaForCausalLM for predictions without further training.
+
+[INFO|configuration_utils.py:953] 2024-10-04 21:10:05,849 >> loading configuration file /root/autodl-tmp/Llama3-8B-Chinese-Chat/generation_config.json
+
+[INFO|configuration_utils.py:1000] 2024-10-04 21:10:05,849 >> Generate config GenerationConfig {
+  "bos_token_id": 128000,
+  "eos_token_id": 128009,
+  "pad_token_id": 128009
+}
+
+
+[INFO|checkpointing.py:103] 2024-10-04 21:10:05,858 >> Gradient checkpointing enabled.
+
+[INFO|attention.py:80] 2024-10-04 21:10:05,858 >> Using torch SDPA for faster training and inference.
+
+[INFO|adapter.py:302] 2024-10-04 21:10:05,858 >> Upcasting trainable params to float32.
+
+[INFO|adapter.py:158] 2024-10-04 21:10:05,858 >> Fine-tuning method: LoRA
+
+[INFO|misc.py:51] 2024-10-04 21:10:05,859 >> Found linear modules: gate_proj,up_proj,q_proj,down_proj,k_proj,o_proj,v_proj
+
+10/04/2024 21:10:05 - INFO - llamafactory.model.model_utils.checkpointing - Gradient checkpointing enabled.
+
+10/04/2024 21:10:05 - INFO - llamafactory.model.model_utils.attention - Using torch SDPA for faster training and inference.
+
+10/04/2024 21:10:05 - INFO - llamafactory.model.adapter - Upcasting trainable params to float32.
+
+10/04/2024 21:10:05 - INFO - llamafactory.model.adapter - Fine-tuning method: LoRA
+
+10/04/2024 21:10:05 - INFO - llamafactory.model.model_utils.misc - Found linear modules: down_proj,gate_proj,q_proj,up_proj,v_proj,k_proj,o_proj
+
+[INFO|loader.py:196] 2024-10-04 21:10:06,583 >> trainable params: 20,971,520 || all params: 8,051,232,768 || trainable%: 0.2605
+
+[WARNING|other.py:349] 2024-10-04 21:10:06,587 >> Detected kernel version 4.19.90, which is below the recommended minimum of 5.5.0; this can cause the process to hang. It is recommended to upgrade the kernel to the minimum version or higher.
+
+10/04/2024 21:10:06 - INFO - llamafactory.model.loader - trainable params: 20,971,520 || all params: 8,051,232,768 || trainable%: 0.2605
+
+[INFO|trainer.py:642] 2024-10-04 21:10:06,598 >> Using auto half precision backend
+
+[INFO|trainer.py:2128] 2024-10-04 21:10:07,017 >> ***** Running training *****
+
+[INFO|trainer.py:2129] 2024-10-04 21:10:07,017 >>   Num examples = 4,800
+
+[INFO|trainer.py:2130] 2024-10-04 21:10:07,017 >>   Num Epochs = 2
+
+[INFO|trainer.py:2131] 2024-10-04 21:10:07,017 >>   Instantaneous batch size per device = 2
+
+[INFO|trainer.py:2134] 2024-10-04 21:10:07,017 >>   Total train batch size (w. parallel, distributed & accumulation) = 32
+
+[INFO|trainer.py:2135] 2024-10-04 21:10:07,017 >>   Gradient Accumulation steps = 8
+
+[INFO|trainer.py:2136] 2024-10-04 21:10:07,017 >>   Total optimization steps = 300
+
+[INFO|trainer.py:2137] 2024-10-04 21:10:07,022 >>   Number of trainable parameters = 20,971,520
+
+[INFO|callbacks.py:310] 2024-10-04 21:10:18,196 >> {'loss': 1.8378, 'learning_rate': 4.9966e-05, 'epoch': 0.03, 'throughput': 2188.17}
+
+[INFO|callbacks.py:310] 2024-10-04 21:10:28,076 >> {'loss': 0.5470, 'learning_rate': 4.9863e-05, 'epoch': 0.07, 'throughput': 2272.67}
+
+[INFO|callbacks.py:310] 2024-10-04 21:10:38,071 >> {'loss': 0.1790, 'learning_rate': 4.9692e-05, 'epoch': 0.10, 'throughput': 2300.71}
+
+[INFO|callbacks.py:310] 2024-10-04 21:10:48,064 >> {'loss': 0.0952, 'learning_rate': 4.9454e-05, 'epoch': 0.13, 'throughput': 2300.34}
+
+[INFO|callbacks.py:310] 2024-10-04 21:10:57,908 >> {'loss': 0.0699, 'learning_rate': 4.9148e-05, 'epoch': 0.17, 'throughput': 2279.85}
+
+[INFO|callbacks.py:310] 2024-10-04 21:11:08,207 >> {'loss': 0.0458, 'learning_rate': 4.8776e-05, 'epoch': 0.20, 'throughput': 2266.79}
+
+[INFO|callbacks.py:310] 2024-10-04 21:11:18,257 >> {'loss': 0.0512, 'learning_rate': 4.8340e-05, 'epoch': 0.23, 'throughput': 2248.92}
+
+[INFO|callbacks.py:310] 2024-10-04 21:11:28,282 >> {'loss': 0.0338, 'learning_rate': 4.7839e-05, 'epoch': 0.27, 'throughput': 2269.94}
+
+[INFO|callbacks.py:310] 2024-10-04 21:11:38,326 >> {'loss': 0.0416, 'learning_rate': 4.7275e-05, 'epoch': 0.30, 'throughput': 2277.35}
+
+[INFO|callbacks.py:310] 2024-10-04 21:11:48,375 >> {'loss': 0.0373, 'learning_rate': 4.6651e-05, 'epoch': 0.33, 'throughput': 2287.15}
+
+[INFO|callbacks.py:310] 2024-10-04 21:11:58,402 >> {'loss': 0.0334, 'learning_rate': 4.5967e-05, 'epoch': 0.37, 'throughput': 2284.51}
+
+[INFO|callbacks.py:310] 2024-10-04 21:12:08,418 >> {'loss': 0.0284, 'learning_rate': 4.5225e-05, 'epoch': 0.40, 'throughput': 2279.73}
+
+[INFO|callbacks.py:310] 2024-10-04 21:12:18,509 >> {'loss': 0.0284, 'learning_rate': 4.4429e-05, 'epoch': 0.43, 'throughput': 2282.81}
+
+[INFO|callbacks.py:310] 2024-10-04 21:12:28,580 >> {'loss': 0.0321, 'learning_rate': 4.3579e-05, 'epoch': 0.47, 'throughput': 2286.11}
+
+[INFO|callbacks.py:310] 2024-10-04 21:12:38,651 >> {'loss': 0.0248, 'learning_rate': 4.2678e-05, 'epoch': 0.50, 'throughput': 2288.66}
+
+[INFO|callbacks.py:310] 2024-10-04 21:12:48,821 >> {'loss': 0.0202, 'learning_rate': 4.1728e-05, 'epoch': 0.53, 'throughput': 2285.51}
+
+[INFO|callbacks.py:310] 2024-10-04 21:12:59,213 >> {'loss': 0.0279, 'learning_rate': 4.0733e-05, 'epoch': 0.57, 'throughput': 2279.12}
+
+[INFO|callbacks.py:310] 2024-10-04 21:13:09,563 >> {'loss': 0.0237, 'learning_rate': 3.9695e-05, 'epoch': 0.60, 'throughput': 2280.06}
+
+[INFO|callbacks.py:310] 2024-10-04 21:13:19,602 >> {'loss': 0.0330, 'learning_rate': 3.8616e-05, 'epoch': 0.63, 'throughput': 2279.52}
+
+[INFO|callbacks.py:310] 2024-10-04 21:13:29,617 >> {'loss': 0.0202, 'learning_rate': 3.7500e-05, 'epoch': 0.67, 'throughput': 2276.68}
+
+[INFO|callbacks.py:310] 2024-10-04 21:13:39,912 >> {'loss': 0.0177, 'learning_rate': 3.6350e-05, 'epoch': 0.70, 'throughput': 2276.84}
+
+[INFO|callbacks.py:310] 2024-10-04 21:13:50,026 >> {'loss': 0.0243, 'learning_rate': 3.5168e-05, 'epoch': 0.73, 'throughput': 2276.24}
+
+[INFO|callbacks.py:310] 2024-10-04 21:14:00,058 >> {'loss': 0.0232, 'learning_rate': 3.3959e-05, 'epoch': 0.77, 'throughput': 2280.98}
+
+[INFO|callbacks.py:310] 2024-10-04 21:14:10,142 >> {'loss': 0.0251, 'learning_rate': 3.2725e-05, 'epoch': 0.80, 'throughput': 2283.52}
+
+[INFO|callbacks.py:310] 2024-10-04 21:14:20,199 >> {'loss': 0.0265, 'learning_rate': 3.1470e-05, 'epoch': 0.83, 'throughput': 2282.61}
+
+[INFO|callbacks.py:310] 2024-10-04 21:14:30,366 >> {'loss': 0.0262, 'learning_rate': 3.0198e-05, 'epoch': 0.87, 'throughput': 2283.61}
+
+[INFO|callbacks.py:310] 2024-10-04 21:14:40,523 >> {'loss': 0.0145, 'learning_rate': 2.8911e-05, 'epoch': 0.90, 'throughput': 2278.24}
+
+[INFO|callbacks.py:310] 2024-10-04 21:14:50,818 >> {'loss': 0.0169, 'learning_rate': 2.7613e-05, 'epoch': 0.93, 'throughput': 2276.44}
+
+[INFO|callbacks.py:310] 2024-10-04 21:15:01,002 >> {'loss': 0.0148, 'learning_rate': 2.6308e-05, 'epoch': 0.97, 'throughput': 2275.84}
+
+[INFO|callbacks.py:310] 2024-10-04 21:15:11,254 >> {'loss': 0.0127, 'learning_rate': 2.5000e-05, 'epoch': 1.00, 'throughput': 2272.82}
+
+[INFO|callbacks.py:310] 2024-10-04 21:15:21,471 >> {'loss': 0.0139, 'learning_rate': 2.3692e-05, 'epoch': 1.03, 'throughput': 2272.34}
+
+[INFO|callbacks.py:310] 2024-10-04 21:15:31,400 >> {'loss': 0.0116, 'learning_rate': 2.2387e-05, 'epoch': 1.07, 'throughput': 2272.24}
+
+[INFO|callbacks.py:310] 2024-10-04 21:15:41,358 >> {'loss': 0.0258, 'learning_rate': 2.1089e-05, 'epoch': 1.10, 'throughput': 2272.85}
+
+[INFO|callbacks.py:310] 2024-10-04 21:15:51,668 >> {'loss': 0.0183, 'learning_rate': 1.9802e-05, 'epoch': 1.13, 'throughput': 2273.20}
+
+[INFO|callbacks.py:310] 2024-10-04 21:16:01,959 >> {'loss': 0.0138, 'learning_rate': 1.8530e-05, 'epoch': 1.17, 'throughput': 2270.31}
+
+[INFO|callbacks.py:310] 2024-10-04 21:16:12,381 >> {'loss': 0.0244, 'learning_rate': 1.7275e-05, 'epoch': 1.20, 'throughput': 2266.89}
+
+[INFO|callbacks.py:310] 2024-10-04 21:16:22,485 >> {'loss': 0.0132, 'learning_rate': 1.6041e-05, 'epoch': 1.23, 'throughput': 2266.40}
+
+[INFO|callbacks.py:310] 2024-10-04 21:16:32,500 >> {'loss': 0.0185, 'learning_rate': 1.4832e-05, 'epoch': 1.27, 'throughput': 2267.21}
+
+[INFO|callbacks.py:310] 2024-10-04 21:16:42,460 >> {'loss': 0.0140, 'learning_rate': 1.3650e-05, 'epoch': 1.30, 'throughput': 2268.24}
+
+[INFO|callbacks.py:310] 2024-10-04 21:16:52,777 >> {'loss': 0.0126, 'learning_rate': 1.2500e-05, 'epoch': 1.33, 'throughput': 2266.41}
+
+[INFO|callbacks.py:310] 2024-10-04 21:17:03,187 >> {'loss': 0.0085, 'learning_rate': 1.1384e-05, 'epoch': 1.37, 'throughput': 2263.30}
+
+[INFO|callbacks.py:310] 2024-10-04 21:17:13,575 >> {'loss': 0.0117, 'learning_rate': 1.0305e-05, 'epoch': 1.40, 'throughput': 2263.13}
+
+[INFO|callbacks.py:310] 2024-10-04 21:17:23,930 >> {'loss': 0.0212, 'learning_rate': 9.2670e-06, 'epoch': 1.43, 'throughput': 2262.41}
+
+[INFO|callbacks.py:310] 2024-10-04 21:17:34,028 >> {'loss': 0.0078, 'learning_rate': 8.2717e-06, 'epoch': 1.47, 'throughput': 2262.17}
+
+[INFO|callbacks.py:310] 2024-10-04 21:17:44,152 >> {'loss': 0.0095, 'learning_rate': 7.3223e-06, 'epoch': 1.50, 'throughput': 2264.54}
+
+[INFO|callbacks.py:310] 2024-10-04 21:17:54,208 >> {'loss': 0.0124, 'learning_rate': 6.4214e-06, 'epoch': 1.53, 'throughput': 2264.94}
+
+[INFO|callbacks.py:310] 2024-10-04 21:18:04,554 >> {'loss': 0.0104, 'learning_rate': 5.5714e-06, 'epoch': 1.57, 'throughput': 2265.42}
+
+[INFO|callbacks.py:310] 2024-10-04 21:18:14,755 >> {'loss': 0.0168, 'learning_rate': 4.7746e-06, 'epoch': 1.60, 'throughput': 2265.12}
+
+[INFO|callbacks.py:310] 2024-10-04 21:18:24,910 >> {'loss': 0.0157, 'learning_rate': 4.0332e-06, 'epoch': 1.63, 'throughput': 2265.35}
+
+[INFO|callbacks.py:310] 2024-10-04 21:18:35,122 >> {'loss': 0.0116, 'learning_rate': 3.3494e-06, 'epoch': 1.67, 'throughput': 2266.74}
+
+[INFO|callbacks.py:310] 2024-10-04 21:18:45,248 >> {'loss': 0.0135, 'learning_rate': 2.7248e-06, 'epoch': 1.70, 'throughput': 2267.22}
+
+[INFO|callbacks.py:310] 2024-10-04 21:18:55,345 >> {'loss': 0.0114, 'learning_rate': 2.1614e-06, 'epoch': 1.73, 'throughput': 2267.26}
+
+[INFO|callbacks.py:310] 2024-10-04 21:19:05,382 >> {'loss': 0.0106, 'learning_rate': 1.6605e-06, 'epoch': 1.77, 'throughput': 2267.52}
+
+[INFO|callbacks.py:310] 2024-10-04 21:19:15,413 >> {'loss': 0.0114, 'learning_rate': 1.2236e-06, 'epoch': 1.80, 'throughput': 2269.49}
+
+[INFO|callbacks.py:310] 2024-10-04 21:19:25,391 >> {'loss': 0.0073, 'learning_rate': 8.5185e-07, 'epoch': 1.83, 'throughput': 2270.31}
+
+[INFO|callbacks.py:310] 2024-10-04 21:19:35,438 >> {'loss': 0.0119, 'learning_rate': 5.4631e-07, 'epoch': 1.87, 'throughput': 2270.55}
+
+[INFO|callbacks.py:310] 2024-10-04 21:19:45,456 >> {'loss': 0.0105, 'learning_rate': 3.0779e-07, 'epoch': 1.90, 'throughput': 2270.39}
+
+[INFO|callbacks.py:310] 2024-10-04 21:19:55,404 >> {'loss': 0.0198, 'learning_rate': 1.3695e-07, 'epoch': 1.93, 'throughput': 2270.45}
+
+[INFO|callbacks.py:310] 2024-10-04 21:20:05,429 >> {'loss': 0.0126, 'learning_rate': 3.4262e-08, 'epoch': 1.97, 'throughput': 2270.39}
+
+[INFO|callbacks.py:310] 2024-10-04 21:20:15,490 >> {'loss': 0.0113, 'learning_rate': 0.0000e+00, 'epoch': 2.00, 'throughput': 2270.95}
+
+[INFO|trainer.py:3478] 2024-10-04 21:20:15,491 >> Saving model checkpoint to saves/LLaMA3-8B-Chinese-Chat/lora/train_2024-10-04-21-06-36/checkpoint-300
+
+[INFO|tokenization_utils_base.py:2574] 2024-10-04 21:20:15,654 >> tokenizer config file saved in saves/LLaMA3-8B-Chinese-Chat/lora/train_2024-10-04-21-06-36/checkpoint-300/tokenizer_config.json
+
+[INFO|tokenization_utils_base.py:2583] 2024-10-04 21:20:15,654 >> Special tokens file saved in saves/LLaMA3-8B-Chinese-Chat/lora/train_2024-10-04-21-06-36/checkpoint-300/special_tokens_map.json
+
+[INFO|trainer.py:2383] 2024-10-04 21:20:16,036 >> 
+
+Training completed. Do not forget to share your model on huggingface.co/models =)
+
+
+
+[INFO|trainer.py:3478] 2024-10-04 21:20:16,039 >> Saving model checkpoint to saves/LLaMA3-8B-Chinese-Chat/lora/train_2024-10-04-21-06-36
+
+[INFO|tokenization_utils_base.py:2574] 2024-10-04 21:20:16,155 >> tokenizer config file saved in saves/LLaMA3-8B-Chinese-Chat/lora/train_2024-10-04-21-06-36/tokenizer_config.json
+
+[INFO|tokenization_utils_base.py:2583] 2024-10-04 21:20:16,156 >> Special tokens file saved in saves/LLaMA3-8B-Chinese-Chat/lora/train_2024-10-04-21-06-36/special_tokens_map.json
+
+[WARNING|ploting.py:89] 2024-10-04 21:20:16,450 >> No metric eval_loss to plot.
+
+[WARNING|ploting.py:89] 2024-10-04 21:20:16,451 >> No metric eval_accuracy to plot.
+
+[INFO|modelcard.py:449] 2024-10-04 21:20:16,452 >> Dropping the following result as it does not have all the necessary fields:
+{'task': {'name': 'Causal Language Modeling', 'type': 'text-generation'}}
+

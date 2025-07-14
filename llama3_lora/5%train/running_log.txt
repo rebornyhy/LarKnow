@@ -1,0 +1,183 @@
+[WARNING|parser.py:273] 2024-11-12 19:03:56,520 >> `ddp_find_unused_parameters` needs to be set as False for LoRA in DDP training.
+
+[INFO|parser.py:325] 2024-11-12 19:03:56,521 >> Process rank: 0, device: cuda:0, n_gpu: 1, distributed training: True, compute dtype: torch.bfloat16
+
+[INFO|tokenization_utils_base.py:2159] 2024-11-12 19:03:56,525 >> loading file tokenizer.json
+
+11/12/2024 19:03:56 - WARNING - llamafactory.hparams.parser - `ddp_find_unused_parameters` needs to be set as False for LoRA in DDP training.
+
+11/12/2024 19:03:56 - INFO - llamafactory.hparams.parser - Process rank: 1, device: cuda:1, n_gpu: 1, distributed training: True, compute dtype: torch.bfloat16
+
+[INFO|tokenization_utils_base.py:2159] 2024-11-12 19:03:56,525 >> loading file added_tokens.json
+
+[INFO|tokenization_utils_base.py:2159] 2024-11-12 19:03:56,525 >> loading file special_tokens_map.json
+
+[INFO|tokenization_utils_base.py:2159] 2024-11-12 19:03:56,525 >> loading file tokenizer_config.json
+
+[WARNING|logging.py:313] 2024-11-12 19:03:56,803 >> Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+
+[INFO|template.py:270] 2024-11-12 19:03:56,804 >> Replace eos token: <|eot_id|>
+
+[INFO|loader.py:50] 2024-11-12 19:03:56,804 >> Loading dataset llama3_5%fine.json...
+
+11/12/2024 19:03:56 - WARNING - transformers.tokenization_utils_base - Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+
+11/12/2024 19:03:56 - INFO - llamafactory.data.template - Replace eos token: <|eot_id|>
+
+11/12/2024 19:03:58 - INFO - llamafactory.data.loader - Loading dataset llama3_5%fine.json...
+
+[INFO|configuration_utils.py:731] 2024-11-12 19:04:01,910 >> loading configuration file /root/autodl-tmp/Llama3-8B-Chinese-Chat/config.json
+
+[INFO|configuration_utils.py:800] 2024-11-12 19:04:01,911 >> Model config LlamaConfig {
+  "_name_or_path": "/root/autodl-tmp/Llama3-8B-Chinese-Chat",
+  "architectures": [
+    "LlamaForCausalLM"
+  ],
+  "attention_bias": false,
+  "attention_dropout": 0.0,
+  "bos_token_id": 128000,
+  "eos_token_id": 128009,
+  "hidden_act": "silu",
+  "hidden_size": 4096,
+  "initializer_range": 0.02,
+  "intermediate_size": 14336,
+  "max_position_embeddings": 8192,
+  "mlp_bias": false,
+  "model_type": "llama",
+  "num_attention_heads": 32,
+  "num_hidden_layers": 32,
+  "num_key_value_heads": 8,
+  "pretraining_tp": 1,
+  "rms_norm_eps": 1e-05,
+  "rope_scaling": null,
+  "rope_theta": 500000.0,
+  "tie_word_embeddings": false,
+  "torch_dtype": "bfloat16",
+  "transformers_version": "4.42.4",
+  "use_cache": true,
+  "vocab_size": 128256
+}
+
+
+[INFO|modeling_utils.py:3553] 2024-11-12 19:04:01,943 >> loading weights file /root/autodl-tmp/Llama3-8B-Chinese-Chat/model.safetensors.index.json
+
+[INFO|modeling_utils.py:1531] 2024-11-12 19:04:01,944 >> Instantiating LlamaForCausalLM model under default dtype torch.bfloat16.
+
+[INFO|configuration_utils.py:1000] 2024-11-12 19:04:01,945 >> Generate config GenerationConfig {
+  "bos_token_id": 128000,
+  "eos_token_id": 128009
+}
+
+
+[INFO|modeling_utils.py:4364] 2024-11-12 19:04:08,241 >> All model checkpoint weights were used when initializing LlamaForCausalLM.
+
+
+[INFO|modeling_utils.py:4372] 2024-11-12 19:04:08,241 >> All the weights of LlamaForCausalLM were initialized from the model checkpoint at /root/autodl-tmp/Llama3-8B-Chinese-Chat.
+If your task is similar to the task the model of the checkpoint was trained on, you can already use LlamaForCausalLM for predictions without further training.
+
+[INFO|configuration_utils.py:953] 2024-11-12 19:04:08,244 >> loading configuration file /root/autodl-tmp/Llama3-8B-Chinese-Chat/generation_config.json
+
+[INFO|configuration_utils.py:1000] 2024-11-12 19:04:08,245 >> Generate config GenerationConfig {
+  "bos_token_id": 128000,
+  "eos_token_id": 128009,
+  "pad_token_id": 128009
+}
+
+
+[INFO|checkpointing.py:103] 2024-11-12 19:04:08,252 >> Gradient checkpointing enabled.
+
+[INFO|attention.py:80] 2024-11-12 19:04:08,252 >> Using torch SDPA for faster training and inference.
+
+[INFO|adapter.py:302] 2024-11-12 19:04:08,252 >> Upcasting trainable params to float32.
+
+[INFO|adapter.py:158] 2024-11-12 19:04:08,253 >> Fine-tuning method: LoRA
+
+[INFO|misc.py:51] 2024-11-12 19:04:08,253 >> Found linear modules: up_proj,k_proj,down_proj,q_proj,o_proj,gate_proj,v_proj
+
+11/12/2024 19:04:08 - INFO - llamafactory.model.model_utils.checkpointing - Gradient checkpointing enabled.
+
+11/12/2024 19:04:08 - INFO - llamafactory.model.model_utils.attention - Using torch SDPA for faster training and inference.
+
+11/12/2024 19:04:08 - INFO - llamafactory.model.adapter - Upcasting trainable params to float32.
+
+11/12/2024 19:04:08 - INFO - llamafactory.model.adapter - Fine-tuning method: LoRA
+
+11/12/2024 19:04:08 - INFO - llamafactory.model.model_utils.misc - Found linear modules: o_proj,v_proj,q_proj,up_proj,down_proj,k_proj,gate_proj
+
+[INFO|loader.py:196] 2024-11-12 19:04:09,086 >> trainable params: 20,971,520 || all params: 8,051,232,768 || trainable%: 0.2605
+
+[WARNING|other.py:349] 2024-11-12 19:04:09,090 >> Detected kernel version 4.19.90, which is below the recommended minimum of 5.5.0; this can cause the process to hang. It is recommended to upgrade the kernel to the minimum version or higher.
+
+11/12/2024 19:04:09 - INFO - llamafactory.model.loader - trainable params: 20,971,520 || all params: 8,051,232,768 || trainable%: 0.2605
+
+[INFO|trainer.py:642] 2024-11-12 19:04:09,101 >> Using auto half precision backend
+
+[INFO|trainer.py:2128] 2024-11-12 19:04:09,499 >> ***** Running training *****
+
+[INFO|trainer.py:2129] 2024-11-12 19:04:09,499 >>   Num examples = 1,200
+
+[INFO|trainer.py:2130] 2024-11-12 19:04:09,499 >>   Num Epochs = 2
+
+[INFO|trainer.py:2131] 2024-11-12 19:04:09,499 >>   Instantaneous batch size per device = 2
+
+[INFO|trainer.py:2134] 2024-11-12 19:04:09,499 >>   Total train batch size (w. parallel, distributed & accumulation) = 32
+
+[INFO|trainer.py:2135] 2024-11-12 19:04:09,499 >>   Gradient Accumulation steps = 8
+
+[INFO|trainer.py:2136] 2024-11-12 19:04:09,499 >>   Total optimization steps = 74
+
+[INFO|trainer.py:2137] 2024-11-12 19:04:09,504 >>   Number of trainable parameters = 20,971,520
+
+[INFO|callbacks.py:310] 2024-11-12 19:04:21,286 >> {'loss': 1.8139, 'learning_rate': 4.9439e-05, 'epoch': 0.13, 'throughput': 2145.08}
+
+[INFO|callbacks.py:310] 2024-11-12 19:04:31,353 >> {'loss': 0.5212, 'learning_rate': 4.7781e-05, 'epoch': 0.27, 'throughput': 2193.59}
+
+[INFO|callbacks.py:310] 2024-11-12 19:04:41,492 >> {'loss': 0.2048, 'learning_rate': 4.5100e-05, 'epoch': 0.40, 'throughput': 2212.97}
+
+[INFO|callbacks.py:310] 2024-11-12 19:04:51,776 >> {'loss': 0.1212, 'learning_rate': 4.1517e-05, 'epoch': 0.53, 'throughput': 2212.05}
+
+[INFO|callbacks.py:310] 2024-11-12 19:05:01,910 >> {'loss': 0.0574, 'learning_rate': 3.7192e-05, 'epoch': 0.67, 'throughput': 2250.04}
+
+[INFO|callbacks.py:310] 2024-11-12 19:05:11,938 >> {'loss': 0.0561, 'learning_rate': 3.2321e-05, 'epoch': 0.80, 'throughput': 2271.72}
+
+[INFO|callbacks.py:310] 2024-11-12 19:05:21,935 >> {'loss': 0.0461, 'learning_rate': 2.7120e-05, 'epoch': 0.93, 'throughput': 2273.85}
+
+[INFO|callbacks.py:310] 2024-11-12 19:05:32,027 >> {'loss': 0.0384, 'learning_rate': 2.1825e-05, 'epoch': 1.07, 'throughput': 2273.04}
+
+[INFO|callbacks.py:310] 2024-11-12 19:05:41,943 >> {'loss': 0.0294, 'learning_rate': 1.6672e-05, 'epoch': 1.20, 'throughput': 2285.62}
+
+[INFO|callbacks.py:310] 2024-11-12 19:05:52,118 >> {'loss': 0.0333, 'learning_rate': 1.1892e-05, 'epoch': 1.33, 'throughput': 2281.77}
+
+[INFO|callbacks.py:310] 2024-11-12 19:06:02,376 >> {'loss': 0.0434, 'learning_rate': 7.7015e-06, 'epoch': 1.47, 'throughput': 2273.10}
+
+[INFO|callbacks.py:310] 2024-11-12 19:06:12,627 >> {'loss': 0.0232, 'learning_rate': 4.2873e-06, 'epoch': 1.60, 'throughput': 2269.40}
+
+[INFO|callbacks.py:310] 2024-11-12 19:06:22,553 >> {'loss': 0.0478, 'learning_rate': 1.8028e-06, 'epoch': 1.73, 'throughput': 2272.55}
+
+[INFO|callbacks.py:310] 2024-11-12 19:06:32,574 >> {'loss': 0.0343, 'learning_rate': 3.5960e-07, 'epoch': 1.87, 'throughput': 2273.75}
+
+[INFO|trainer.py:3478] 2024-11-12 19:06:40,516 >> Saving model checkpoint to saves/LLaMA3-8B-Chinese-Chat/lora/train_2024-11-12-19-01-48/checkpoint-74
+
+[INFO|tokenization_utils_base.py:2574] 2024-11-12 19:06:40,653 >> tokenizer config file saved in saves/LLaMA3-8B-Chinese-Chat/lora/train_2024-11-12-19-01-48/checkpoint-74/tokenizer_config.json
+
+[INFO|tokenization_utils_base.py:2583] 2024-11-12 19:06:40,653 >> Special tokens file saved in saves/LLaMA3-8B-Chinese-Chat/lora/train_2024-11-12-19-01-48/checkpoint-74/special_tokens_map.json
+
+[INFO|trainer.py:2383] 2024-11-12 19:06:41,002 >> 
+
+Training completed. Do not forget to share your model on huggingface.co/models =)
+
+
+
+[INFO|trainer.py:3478] 2024-11-12 19:06:41,005 >> Saving model checkpoint to saves/LLaMA3-8B-Chinese-Chat/lora/train_2024-11-12-19-01-48
+
+[INFO|tokenization_utils_base.py:2574] 2024-11-12 19:06:41,133 >> tokenizer config file saved in saves/LLaMA3-8B-Chinese-Chat/lora/train_2024-11-12-19-01-48/tokenizer_config.json
+
+[INFO|tokenization_utils_base.py:2583] 2024-11-12 19:06:41,134 >> Special tokens file saved in saves/LLaMA3-8B-Chinese-Chat/lora/train_2024-11-12-19-01-48/special_tokens_map.json
+
+[WARNING|ploting.py:89] 2024-11-12 19:06:41,407 >> No metric eval_loss to plot.
+
+[WARNING|ploting.py:89] 2024-11-12 19:06:41,407 >> No metric eval_accuracy to plot.
+
+[INFO|modelcard.py:449] 2024-11-12 19:06:41,409 >> Dropping the following result as it does not have all the necessary fields:
+{'task': {'name': 'Causal Language Modeling', 'type': 'text-generation'}}
+
