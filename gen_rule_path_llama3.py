@@ -132,7 +132,7 @@ def get_llama3_form(system, user):
     return gen_rel
 
 
-def gen_prediction(args):
+def gen_prediction():
 
     
     #使用 AutoTokenizer 和 AutoModelForCausalLM 从 transformers 库中加载预训练的模型。
@@ -255,47 +255,4 @@ def gen_prediction(args):
 
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser()
-    parser.add_argument(
-        "--data_path", type=str, default="rmanluo"
-    )
-    parser.add_argument("--d", "-d", type=str, default="RoG-webqsp")        #{RoG-webqsp,RoG-cwq}
-    parser.add_argument(
-        "--split",
-        type=str,
-        default="test",
-    )
-    parser.add_argument("--output_path", type=str, default="results/gen_rule_path")
-    parser.add_argument(
-        "--model_name",
-        type=str,
-        help="model_name for save results",
-        default="Llama-2-7b-hf",
-    )
-    parser.add_argument(
-        "--model_path",
-        type=str,
-        help="model_name for save results",
-        default="./save_models/ROG__",
-    )
-    parser.add_argument(
-        "--prompt_path", type=str, help="prompt_path", default="../prompts/llama2shot.txt"
-    )
-    parser.add_argument(
-        "--rel_dict",
-        nargs="+",
-        default=["datasets/KG/fbnet/relations.dict"],
-        help="relation dictionary",
-    )
-    parser.add_argument(
-        "--force", "-f", action="store_true", help="force to overwrite the results"
-    )
-    parser.add_argument("--debug", action="store_true", help="Debug")
-    parser.add_argument("--lora", action="store_true", help="load lora weights")
-    parser.add_argument("--max_new_tokens", type=int, default=100)
-    parser.add_argument("--n_beam", type=int, default=1)
-    parser.add_argument("--do_sample", action="store_true", help="do sampling")
-
-    args = parser.parse_args()
-
-    gen_path = gen_prediction(args)
+    gen_path = gen_prediction()
