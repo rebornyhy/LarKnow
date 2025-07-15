@@ -7,12 +7,12 @@ Traditional Chinese Medicine formulas (TCMFs) play vital roles in chronic diseas
 
 # model_pipline
 
-![](C:\LarKnow\figs\fig1.png)
+![](figs\fig1.png)
 
 # data_construction
 
-![](C:\LarKnow\figs\fig2.png)
+![](figs\fig2.png)
 
 # case_study
 
-![](C:\LarKnow\figs\fig5.png)
+![](figs\fig5.png)
